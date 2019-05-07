@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DropdownMenu"
+             xmlns:usercontrols="clr-namespace:DropdownMenu.UserControls"
+             x:Class="DropdownMenu.Pages.MainPage">
+    <ContentPage.Content>
+        <Grid BackgroundColor="DarkGray">
+            <StackLayout
+                Margin="10">
+                
+         
+            <usercontrols:DropMenu HorizontalOptions="Center"
+                                   VerticalOptions="Start"
+                                   ListSource="{Binding DemoData.DropMenuList}"
+                                   HeaderText="{Binding DemoData.HeaderName}"
+                                   ItemCheckedCommand="{Binding ItemCheckedCommand}"
+                                   ColorBackground="LightGray"
+                                   HeaderTextColor="DarkBlue"/>
+            
+            <usercontrols:DropMenu HorizontalOptions="Center"
+                                   VerticalOptions="Center"
+                                   ListSource="{Binding DemoData1.DropMenuList}"
+                                   HeaderText="{Binding DemoData1.HeaderName}"
+                                   ItemCheckedCommand="{Binding ItemCheckedCommand}"
+                                   ColorBackground="LightGray"
+                                   HeaderTextColor="DarkBlue"/>
+            </StackLayout> 
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
