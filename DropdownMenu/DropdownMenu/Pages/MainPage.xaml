@@ -12,17 +12,17 @@
          
             <usercontrols:DropMenu HorizontalOptions="Center"
                                    VerticalOptions="Start"
-                                   ListSource="{Binding DemoData.DropMenuList}"
-                                   HeaderText="{Binding DemoData.HeaderName}"
-                                   ItemCheckedCommand="{Binding ItemCheckedCommand}"
+                                   ListSource="{Binding GenderList.DropMenuList}"
+                                   HeaderText="{Binding GenderList.HeaderName}"
+                                   ItemCheckedCommand="{Binding GenderSelectedCommand}"
                                    ColorBackground="LightGray"
                                    HeaderTextColor="DarkBlue"/>
             
             <usercontrols:DropMenu HorizontalOptions="Center"
                                    VerticalOptions="Center"
-                                   ListSource="{Binding DemoData1.DropMenuList}"
-                                   HeaderText="{Binding DemoData1.HeaderName}"
-                                   ItemCheckedCommand="{Binding ItemCheckedCommand}"
+                                   ListSource="{Binding LookingforList.DropMenuList}"
+                                   HeaderText="{Binding LookingforList.HeaderName}"
+                                   ItemCheckedCommand="{Binding LookingforListCommand}"
                                    ColorBackground="LightGray"
                                    HeaderTextColor="DarkBlue"/>
             </StackLayout> 

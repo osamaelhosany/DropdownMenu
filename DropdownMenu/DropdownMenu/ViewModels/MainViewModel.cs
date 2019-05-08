@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Text;
+using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -10,12 +10,13 @@ namespace DropdownMenu.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public DropMenuModel DemoData { get; set; }
-        public DropMenuModel DemoData1 { get; set; }
-        public ICommand ItemCheckedCommand { get; set; }
+        public DropMenuModel GenderList { get; set; }
+        public DropMenuModel LookingforList { get; set; }
+        public ICommand GenderSelectedCommand { get; set; }
+        public ICommand LookingforListCommand { get; set; }
         public MainViewModel()
         {
-            DemoData = new DropMenuModel
+            GenderList = new DropMenuModel
             {
                 Id = 1,
                 HeaderName = "Gender",
@@ -41,7 +42,7 @@ namespace DropdownMenu.ViewModels
                         },
                     }
             };
-            DemoData1 = new DropMenuModel
+            LookingforList = new DropMenuModel
             {
                 Id = 1,
                 HeaderName = "Looking for",
@@ -67,12 +68,21 @@ namespace DropdownMenu.ViewModels
                         },
                     }
             };
-            ItemCheckedCommand = new Command(ItemCheckedCommandExecute);
+            GenderSelectedCommand = new Command(GenderSelectedCommandExecute);
+            LookingforListCommand = new Command(LookingforListCommandExecute);
         }
 
-        private void ItemCheckedCommandExecute(object obj)
+        private void GenderSelectedCommandExecute(object obj)
         {
-            //do what ever you want 
+            //first we set all is selected == false then we set new value
+            GenderList.DropMenuList.Select(x => { x.IsSelected = false; return x; }).ToList();
+
+            if (obj is DropMenuItemModel selecteditem)
+                GenderList.DropMenuList.FirstOrDefault(x => x.Id == selecteditem.Id).IsSelected = true;
+        }
+        private void LookingforListCommandExecute(object obj)
+        {
+
         }
     }
 }
