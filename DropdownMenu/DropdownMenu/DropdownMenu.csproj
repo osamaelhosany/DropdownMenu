@@ -2,6 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>This control help you to show a dropdown menu to user in ios and andriod a quick way to select one value or multi from a set.
+
+install only in PCL 
+
+Add your own icons to android &amp; ios
+ with those names
+ 
+(CheckBoxChecked-CheckBoxUnchecked-ExpanderClose-ExpanderOpen)</Description>
+    <Version>1.0.1</Version>
+    <Copyright>Copyright 2019</Copyright>
+    <Authors>Osama Elhussiny</Authors>
+    <PackageId>Xamarin.Forms.DropdownMenu</PackageId>
+    <PackageProjectUrl>https://github.com/osamaelhosany/DropdownMenu</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/osamaelhosany/DropdownMenu</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -28,9 +43,6 @@
 
   <ItemGroup>
     <None Update="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </None>
-    <None Update="Pages\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
     <None Update="UserControls\DropMenu.xaml">

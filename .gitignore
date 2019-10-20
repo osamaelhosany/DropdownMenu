@@ -10,3 +10,5 @@ bin/
 obj/
 
 
+DropdownMenu/DropdownMenu/Xamarin.Forms.DropdownMenu.1.0.0.nupkg
+DropdownMenu/DropdownMenu/nuget.exe

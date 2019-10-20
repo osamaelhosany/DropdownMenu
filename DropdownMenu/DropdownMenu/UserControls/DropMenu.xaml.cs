@@ -129,6 +129,7 @@ namespace DropdownMenu.UserControls
             if (SingleChoice)
             {
                 var selected = e.Parameter as DropMenuItemModel;
+                HeaderText = selected.Name;
                 var list = ListSource.Cast<DropMenuItemModel>().ToList();
                 list.Select(x =>
                 {
