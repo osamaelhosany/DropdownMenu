@@ -13,18 +13,10 @@ One More Step:
 Simply add the images you want to show for andriod & ios project with names 
 (CheckBoxChecked-CheckBoxUnchecked-ExpanderClose-ExpanderOpen) After that you're good to go! 
 
-You can handle the way to make it multi choice or one choice from command 
-
+if you need to make it single choice just set the single choice property = true
+```    
+    SingleChoice="True"
 ```
-    private void GenderSelectedCommandExecute(object obj)
-    {
-        //first we set all is selected == false then we set new value
-        GenderList.DropMenuList.Select(x => { x.IsSelected = false; return x; }).ToList();
-
-        if (obj is DropMenuItemModel selecteditem)
-            GenderList.DropMenuList.FirstOrDefault(x => x.Id == selecteditem.Id).IsSelected = true;
-    }
- ```
 ## Screenshots
 ![alt text](https://github.com/osamaelhosany/DropdownMenu/blob/master/img/Screenshot_1.png)
 ![alt text](https://github.com/osamaelhosany/DropdownMenu/blob/master/img/Screenshot_2.png)
