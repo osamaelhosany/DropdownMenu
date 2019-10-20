@@ -75,10 +75,10 @@ namespace DropdownMenu.ViewModels
         private void GenderSelectedCommandExecute(object obj)
         {
             //first we set all is selected == false then we set new value
-            GenderList.DropMenuList.Select(x => { x.IsSelected = false; return x; }).ToList();
+            //GenderList.DropMenuList.Select(x => { x.IsSelected = false; return x; }).ToList();
 
-            if (obj is DropMenuItemModel selecteditem)
-                GenderList.DropMenuList.FirstOrDefault(x => x.Id == selecteditem.Id).IsSelected = true;
+            //if (obj is DropMenuItemModel selecteditem)
+            //    GenderList.DropMenuList.FirstOrDefault(x => x.Id == selecteditem.Id).IsSelected = true;
         }
         private void LookingforListCommandExecute(object obj)
         {

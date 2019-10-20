@@ -27,7 +27,20 @@ namespace DropdownMenu.UserControls
             BindableProperty.Create(nameof(ColorBackground), typeof(Color), typeof(DropMenu), Color.White, BindingMode.TwoWay);
         public static readonly BindableProperty ListTextColorProperty =
           BindableProperty.Create(nameof(ListTextColor), typeof(Color), typeof(DropMenu), Color.White, BindingMode.TwoWay);
-       
+        public static readonly BindableProperty SingleChoiceProperty =
+           BindableProperty.Create(nameof(SingleChoice), typeof(bool), typeof(DropMenu), false);
+        public bool SingleChoice
+        {
+            get
+            {
+                return (bool)GetValue(SingleChoiceProperty);
+            }
+            set
+            {
+                if (value != null)
+                    SetValue(SingleChoiceProperty, value);
+            }
+        }
         public string HeaderText
         {
             get
@@ -111,5 +124,21 @@ namespace DropdownMenu.UserControls
             }
         }
 
+        private void SingleChoice_Tapped(object sender, TappedEventArgs e)
+        {
+            if (SingleChoice)
+            {
+                var selected = e.Parameter as DropMenuItemModel;
+                var list = ListSource.Cast<DropMenuItemModel>().ToList();
+                list.Select(x =>
+                {
+                    x.IsSelected = false;
+                    if (x.Id == selected.Id) x.IsSelected = true;
+                    return x;
+                }).ToList();
+                TapGestureRecognizer_Tapped("", new EventArgs());
+                
+            }
+        }
     }
 }

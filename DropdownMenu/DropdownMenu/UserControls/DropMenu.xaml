@@ -56,13 +56,13 @@
                 <controls:RepeaterView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid ColumnSpacing="5" Padding="0" Margin="0,0,0,18">
+                            <Grid ColumnSpacing="5" Padding="0" Margin="0,0,0,18" x:Name="checkbox" >
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="0.1*"/>
                                     <ColumnDefinition Width="0.8*"/>
                                     <ColumnDefinition Width="0.1*"/>
                                 </Grid.ColumnDefinitions>
-                                <controls:CheckBox  Grid.Column="0" x:Name="checkbox" 
+                                <controls:CheckBox  Grid.Column="0" 
                                                        WidthRequest="25"
                                                        HeightRequest="25"
                                                         VerticalOptions="Start" 
@@ -70,7 +70,7 @@
                                                         Margin="0"
                                                         HorizontalOptions="Start">
                                     <controls:CheckBox.GestureRecognizers>
-                                        <TapGestureRecognizer  
+                                        <TapGestureRecognizer  Tapped="SingleChoice_Tapped"
                                                            Command="{Binding ItemCheckedCommand,Source={x:Reference RootItem}}"
                                                            BindingContext="{Binding Source={x:Reference BottomStack},Path=BindingContext}"
                                                            CommandParameter="{Binding Source={x:Reference checkbox},Path=BindingContext}"/>

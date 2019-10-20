@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace DropdownMenu.Controls
 {
-    public class CheckBox : ContentView
+    internal class CheckBox : ContentView
     {
         protected Grid ContentGrid;
         protected ContentView ContentContainer;

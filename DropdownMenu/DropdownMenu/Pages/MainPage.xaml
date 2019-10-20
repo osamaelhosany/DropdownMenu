@@ -1,31 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:DropdownMenu"
-             xmlns:usercontrols="clr-namespace:DropdownMenu.UserControls"
-             x:Class="DropdownMenu.Pages.MainPage">
+<ContentPage
+    x:Class="DropdownMenu.Pages.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:DropdownMenu"
+    xmlns:usercontrols="clr-namespace:DropdownMenu.UserControls">
     <ContentPage.Content>
         <Grid BackgroundColor="DarkGray">
-            <StackLayout
-                Margin="10">
-                
-         
-            <usercontrols:DropMenu HorizontalOptions="Center"
-                                   VerticalOptions="Start"
-                                   ListSource="{Binding GenderList.DropMenuList}"
-                                   HeaderText="{Binding GenderList.HeaderName}"
-                                   ItemCheckedCommand="{Binding GenderSelectedCommand}"
-                                   ColorBackground="LightGray"
-                                   HeaderTextColor="DarkBlue"/>
-            
-            <usercontrols:DropMenu HorizontalOptions="Center"
-                                   VerticalOptions="Center"
-                                   ListSource="{Binding LookingforList.DropMenuList}"
-                                   HeaderText="{Binding LookingforList.HeaderName}"
-                                   ItemCheckedCommand="{Binding LookingforListCommand}"
-                                   ColorBackground="LightGray"
-                                   HeaderTextColor="DarkBlue"/>
-            </StackLayout> 
+            <StackLayout Margin="10">
+
+
+                <usercontrols:DropMenu
+                    ColorBackground="LightGray"
+                    HeaderText="{Binding GenderList.HeaderName}"
+                    HeaderTextColor="DarkBlue"
+                    HorizontalOptions="Center"
+                    ItemCheckedCommand="{Binding GenderSelectedCommand}"
+                    ListSource="{Binding GenderList.DropMenuList}"
+                    SingleChoice="True"
+                    VerticalOptions="Start" />
+
+                <usercontrols:DropMenu
+                    ColorBackground="LightGray"
+                    HeaderText="{Binding LookingforList.HeaderName}"
+                    HeaderTextColor="DarkBlue"
+                    HorizontalOptions="Center"
+                    ItemCheckedCommand="{Binding LookingforListCommand}"
+                    ListSource="{Binding LookingforList.DropMenuList}"
+                    VerticalOptions="Center" />
+            </StackLayout>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

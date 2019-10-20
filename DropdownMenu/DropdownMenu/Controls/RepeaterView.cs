@@ -6,7 +6,7 @@ using Xamarin.Forms;
 
 namespace DropdownMenu.Controls
 {
-    public class RepeaterView : StackLayout
+    internal class RepeaterView : StackLayout
     {
         public static readonly BindableProperty ItemTemplateProperty =
             BindableProperty.Create(nameof(ItemTemplate), typeof(DataTemplate), typeof(RepeaterView), default(DataTemplate));
