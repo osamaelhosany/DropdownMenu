@@ -9,7 +9,8 @@ The project is up on NuGet at the following URL:
 https://www.nuget.org/packages/Xamarin.Forms.StateSquid
 
 Install this package into your shared project. There is no need to install it in your platform specific projects. 
-One More Step:
+
+#### One More Step:
 Simply add the images you want to show for andriod & ios project with names 
 (CheckBoxChecked-CheckBoxUnchecked-ExpanderClose-ExpanderOpen) After that you're good to go! 
 
