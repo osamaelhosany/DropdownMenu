@@ -70,7 +70,7 @@
                                                         Margin="0"
                                                         HorizontalOptions="Start">
                                     <controls:CheckBox.GestureRecognizers>
-                                        <TapGestureRecognizer  Tapped="SingleChoice_Tapped"
+                                        <TapGestureRecognizer  
                                                            Command="{Binding ItemCheckedCommand,Source={x:Reference RootItem}}"
                                                            BindingContext="{Binding Source={x:Reference BottomStack},Path=BindingContext}"
                                                            CommandParameter="{Binding Source={x:Reference checkbox},Path=BindingContext}"/>

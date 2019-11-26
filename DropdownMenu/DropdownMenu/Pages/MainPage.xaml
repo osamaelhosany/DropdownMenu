@@ -7,7 +7,9 @@
     xmlns:usercontrols="clr-namespace:DropdownMenu.UserControls">
     <ContentPage.Content>
         <Grid BackgroundColor="DarkGray">
-            <StackLayout Margin="10">
+            <StackLayout Margin="10"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center">
 
 
                 <usercontrols:DropMenu

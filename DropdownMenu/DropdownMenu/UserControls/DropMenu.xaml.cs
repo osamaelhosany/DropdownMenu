@@ -110,17 +110,21 @@ namespace DropdownMenu.UserControls
             InitializeComponent();
         }
 
-        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             if (!BottomStack.IsVisible)
             {
-                BottomStack.IsVisible = true;
                 headerImage.Source = "ExpanderClose.png";
+
+                BottomStack.IsVisible = true;
+                await BottomStack.TranslateTo(0, 0, 250);
             }
             else
             {
-                BottomStack.IsVisible = false;
                 headerImage.Source = "ExpanderOpen.png";
+
+                BottomStack.IsVisible = false;
+                await BottomStack.TranslateTo(0, -10, 250);
             }
         }
 
